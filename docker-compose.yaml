@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  composer: #https://thephp.website/en/issue/php-docker-quick-setup/
+    image: composer:2.0.2
+    environment:
+      - COMPOSER_CACHE_DIR=/app/var/cache/composer
+    volumes:
+      - .:/app
+#  php:
+#    image: php:8.1-cli
+#    volumes:
+#      - .:/app
+#    working_dir: /app
+  phpunit:
+    image: php:8.1-cli
+    volumes:
+      - .:/app
+    working_dir: /app
+    entrypoint: vendor/bin/phpunit
