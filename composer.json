@@ -1,4 +1,17 @@
 {
+    "name": "mgonzalez117/ivao-php",
+    "authors": [
+        {
+            "name": "Michaël Gonzalez",
+            "email": "cyberalternative@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "IvaoPHP\\": "src/IvaoPHP",
+            "IvaoPHP\\Tests\\": "tests/IvaoPHP"
+        }
+    },
     "require-dev": {
         "phpunit/phpunit": "^9.5"
     }
