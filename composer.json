@@ -1,6 +1,7 @@
 {
     "name": "mgonzalez117/ivao-php",
     "license": "MIT",
+    "description": "Ivao Api Bridge for PHP",
     "authors": [
         {
             "name": "Michaël Gonzalez",
