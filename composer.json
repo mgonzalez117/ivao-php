@@ -19,5 +19,10 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit --colors --verbose --configuration phpunit.xml"
+    },
+    "require": {
+        "symfony/dependency-injection": "^5.4",
+        "symfony/yaml": "^5.4",
+        "symfony/config": "^5.4"
     }
 }
