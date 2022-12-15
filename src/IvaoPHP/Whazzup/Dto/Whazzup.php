@@ -9,4 +9,22 @@ class Whazzup
     const VOICE_SERVERS = 'voiceServers';
     const CLIENTS = 'clients';
     const CONNECTIONS = 'connections';
+
+    private array $responseData;
+
+    public function __construct(?array $responseData)
+    {
+        $this->responseData = $responseData;
+    }
+
+    public function getResponseData(): array
+    {
+        return $this->responseData;
+    }
+
+    public function setResponseData(array $responseData): self
+    {
+        $this->responseData = $responseData;
+        return $this;
+    }
 }

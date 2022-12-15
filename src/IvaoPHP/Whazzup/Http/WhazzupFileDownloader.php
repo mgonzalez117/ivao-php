@@ -15,7 +15,7 @@ class WhazzupFileDownloader
         $this->fileDownloader = $fileDownloader;
     }
 
-    public function getScalarData(): array
+    public function getScalarResponseData(): array
     {
         return json_decode($this->download(), true);
     }

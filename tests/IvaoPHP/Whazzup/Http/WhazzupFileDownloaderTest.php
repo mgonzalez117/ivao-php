@@ -23,11 +23,11 @@ class WhazzupFileDownloaderTest extends TestCase
     }
 
     /**
-     * @covers \IvaoPHP\Whazzup\Http\WhazzupFileDownloader::getScalarData
+     * @covers \IvaoPHP\Whazzup\Http\WhazzupFileDownloader::getScalarResponseData
      */
     public function testGetScalarData()
     {
-        $data = $this->whazzupFileDownloader->getScalarData();
+        $data = $this->whazzupFileDownloader->getScalarResponseData();
 
         $this->assertIsArray($data);
         $this->assertArrayHasKey(Whazzup::UPDATED_AT, $data);
