@@ -4,7 +4,7 @@
 namespace IvaoPHP\Whazzup\Http;
 
 
-class WhazzupClient
+class WhazzupFileDownloader
 {
     private string $fileUrl;
     private HttpFileDownloaderInterface $fileDownloader;

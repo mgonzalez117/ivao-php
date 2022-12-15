@@ -7,27 +7,27 @@ namespace IvaoPHP\Tests\Whazzup\Http;
 
 use PHPUnit\Framework\TestCase;
 use IvaoPHP\Tests\Whazzup\Http\HttpFileDownloaderMock;
-use IvaoPHP\Whazzup\Http\WhazzupClient;
+use IvaoPHP\Whazzup\Http\WhazzupFileDownloader;
 use IvaoPHP\Whazzup\Dto\Clients;
 use IvaoPHP\Whazzup\Dto\Whazzup;
 use IvaoPHP\Whazzup\Dto\Connections;
 
-class WhazzupClientTest extends TestCase
+class WhazzupFileDownloaderTest extends TestCase
 {
-    private WhazzupClient $whazzupClient;
+    private WhazzupFileDownloader $whazzupFileDownloader;
 
     public function setUp(): void
     {
         parent::setUp();
-        $this->whazzupClient = new WhazzupClient(new HttpFileDownloaderMock());
+        $this->whazzupFileDownloader = new WhazzupFileDownloader(new HttpFileDownloaderMock());
     }
 
     /**
-     * @covers \IvaoPHP\Whazzup\Http\WhazzupClient::getScalarData
+     * @covers \IvaoPHP\Whazzup\Http\WhazzupFileDownloader::getScalarData
      */
     public function testGetScalarData()
     {
-        $data = $this->whazzupClient->getScalarData();
+        $data = $this->whazzupFileDownloader->getScalarData();
 
         $this->assertIsArray($data);
         $this->assertArrayHasKey(Whazzup::UPDATED_AT, $data);

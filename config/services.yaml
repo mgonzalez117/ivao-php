@@ -1,8 +1,11 @@
 parameters:
   ivao.whazzup.fileUrl: 'https://api.ivao.aero/v2/tracker/whazzup'
 services:
-  whazzup.client:
-    class: IvaoPHP\Whazzup\Http\WhazzupClient
+  whazzup.ivaoClient:
+    class: IvaoPHP\Whazzup\IvaoClient
+    arguments: ['@whazzup.http.fileDownloader']
+  whazzup.http.fileDownloader:
+    class: IvaoPHP\Whazzup\Http\WhazzupFileDownloader
     arguments: ['@infrastructure.http.fileDownloader', '%ivao.whazzup.fileUrl%']
   infrastructure.http.fileDownloader:
     class: IvaoPHP\Infrastructure\Http\FileDownloader

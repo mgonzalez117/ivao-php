@@ -14,6 +14,6 @@ $loader->load('services.yaml');
 // https://symfony.com/doc/current/components/dependency_injection/compilation.html
 //$containerBuilder->compile();
 
-/** @var \IvaoPHP\Whazzup\Http\WhazzupClient $whazzupClient */
-$whazzupClient = $containerBuilder->get('whazzup.client');
-echo "nb connections : ". $whazzupClient->getScalarData()[\IvaoPHP\Whazzup\Dto\Whazzup::CONNECTIONS][\IvaoPHP\Whazzup\Dto\Connections::TOTAL];
+/** @var \IvaoPHP\Whazzup\IvaoClient */
+$IvaoClient = $containerBuilder->get('whazzup.ivaoClient');
+echo "nb connections : ".$IvaoClient->getTotalConnections();
