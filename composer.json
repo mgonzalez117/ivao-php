@@ -23,6 +23,7 @@
     "require": {
         "symfony/dependency-injection": "^5.4",
         "symfony/yaml": "^5.4",
-        "symfony/config": "^5.4"
+        "symfony/config": "^5.4",
+        "symfony/cache": "^5.4"
     }
 }

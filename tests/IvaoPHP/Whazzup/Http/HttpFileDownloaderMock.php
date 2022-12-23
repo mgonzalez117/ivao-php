@@ -7,7 +7,7 @@ use IvaoPHP\Whazzup\Http\HttpFileDownloaderInterface;
 
 class HttpFileDownloaderMock implements HttpFileDownloaderInterface
 {
-    public function download(string $url): string
+    public function download(?string $url = ''): string
     {
         return file_get_contents(__DIR__.'/../../../Fixtures/whazzup.json');
     }
