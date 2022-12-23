@@ -2,6 +2,7 @@
 
 
 namespace IvaoPHP\Tests\Whazzup;
+use IvaoPHP\Infrastructure\Cache\WhazzupFileCacher;
 use IvaoPHP\Tests\Whazzup\Http\HttpFileDownloaderMock;
 use IvaoPHP\Whazzup\Http\WhazzupFileDownloader;
 use IvaoPHP\Whazzup\IvaoClient;
@@ -15,7 +16,7 @@ class IvaoClientTest extends TestCase
     public function setUp():void
     {
         $whazzupFileDownloader = new WhazzupFileDownloader(new HttpFileDownloaderMock());
-        $this->ivaoClient = new IvaoClient($whazzupFileDownloader);
+        $this->ivaoClient = new IvaoClient($whazzupFileDownloader, new WhazzupFileCacher());
     }
 
     /**
