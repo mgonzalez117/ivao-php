@@ -1,8 +1,9 @@
 <?php
 
 
-namespace IvaoPHP\Infrastructure\Cache;
+namespace IvaoPHP\Tests\Shared\Infrastructure\Cache;
 
+use IvaoPHP\Shared\Infrastructure\Cache\WhazzupFileCacher;
 use IvaoPHP\Tests\Whazzup\Http\HttpFileDownloaderMock;
 use PHPUnit\Framework\TestCase;
 use IvaoPHP\Whazzup\Dto\Whazzup;
@@ -38,7 +39,7 @@ class WhazzupFileCacherTest extends TestCase
     }
 
     /**
-     * @covers \IvaoPHP\Infrastructure\Cache\WhazzupFileCacher::getWhazzupFromCache()
+     * @covers \IvaoPHP\Shared\Infrastructure\Cache\WhazzupFileCacher::getWhazzupFromCache()
      */
     public function testGetWhazzupFromCache()
     {
@@ -59,7 +60,7 @@ class WhazzupFileCacherTest extends TestCase
     }
 
     /**
-     * @covers \IvaoPHP\Infrastructure\Cache\WhazzupFileCacher::setWhazzupCache()
+     * @covers \IvaoPHP\Shared\Infrastructure\Cache\WhazzupFileCacher::setWhazzupCache()
      */
     public function testSetWhazzupCache()
     {
@@ -76,7 +77,7 @@ class WhazzupFileCacherTest extends TestCase
     }
 
     /**
-     * @covers \IvaoPHP\Infrastructure\Cache\WhazzupFileCacher::clearCache()
+     * @covers \IvaoPHP\Shared\Infrastructure\Cache\WhazzupFileCacher::clearCache()
      */
     public function testClearCache()
     {

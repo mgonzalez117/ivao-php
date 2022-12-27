@@ -1,7 +1,7 @@
 <?php
 
 
-namespace IvaoPHP\Infrastructure\Cache;
+namespace IvaoPHP\Shared\Infrastructure\Cache;
 
 
 use IvaoPHP\Whazzup\Cache\WhazzupFileCacherInterface;

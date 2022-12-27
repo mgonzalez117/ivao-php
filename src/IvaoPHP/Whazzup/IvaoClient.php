@@ -4,7 +4,7 @@
 namespace IvaoPHP\Whazzup;
 
 
-use IvaoPHP\Infrastructure\Cache\WhazzupFileCacher;
+use IvaoPHP\Shared\Infrastructure\Cache\WhazzupFileCacher;
 use IvaoPHP\Whazzup\Dto\Connections;
 use IvaoPHP\Whazzup\Dto\Whazzup;
 use IvaoPHP\Whazzup\Http\WhazzupFileDownloader;

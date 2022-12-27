@@ -1,6 +1,6 @@
 <?php
 
-namespace IvaoPHP\Infrastructure\Http;
+namespace IvaoPHP\Shared\Infrastructure\Http;
 
 use IvaoPHP\Whazzup\Http\HttpFileDownloaderInterface;
 

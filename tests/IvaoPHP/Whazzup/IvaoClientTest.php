@@ -2,7 +2,7 @@
 
 
 namespace IvaoPHP\Tests\Whazzup;
-use IvaoPHP\Infrastructure\Cache\WhazzupFileCacher;
+use IvaoPHP\Shared\Infrastructure\Cache\WhazzupFileCacher;
 use IvaoPHP\Tests\Whazzup\Http\HttpFileDownloaderMock;
 use IvaoPHP\Whazzup\Http\WhazzupFileDownloader;
 use IvaoPHP\Whazzup\IvaoClient;
