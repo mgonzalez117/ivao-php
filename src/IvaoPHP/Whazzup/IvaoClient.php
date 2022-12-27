@@ -21,6 +21,11 @@ class IvaoClient
         $this->fileCacher = $fileCacher;
     }
 
+    /**
+     * https://wiki.ivao.aero/en/home/devops/api/whazuup/how-to-retrieve-v2
+     * Uses the cache because => The whazzup file may only be downloaded once every 15 seconds, which means 4 times during one minute. Using a more frequent download rate will result in an IP ban.
+     * @return array
+     */
     public function getData(): array
     {
 
