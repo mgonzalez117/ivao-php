@@ -1,11 +1,11 @@
 <?php
 
 
-namespace IvaoPHP\Tests\Whazzup;
+namespace IvaoPHP\Tests\Whazzup\Bridge;
 use IvaoPHP\Shared\Infrastructure\Cache\WhazzupFileCacher;
-use IvaoPHP\Tests\Whazzup\Http\HttpFileDownloaderMock;
-use IvaoPHP\Whazzup\Http\WhazzupFileDownloader;
-use IvaoPHP\Whazzup\IvaoClient;
+use IvaoPHP\Tests\Whazzup\Bridge\Http\HttpFileDownloaderMock;
+use IvaoPHP\Whazzup\Bridge\Http\WhazzupFileDownloader;
+use IvaoPHP\Whazzup\Bridge\IvaoClient;
 use PHPUnit\Framework\TestCase;
 
 
@@ -20,7 +20,7 @@ class IvaoClientTest extends TestCase
     }
 
     /**
-     * @covers \IvaoPHP\Whazzup\IvaoClient::getTotalConnections
+     * @covers \IvaoPHP\Whazzup\Bridge\IvaoClient::getTotalConnections
      */
     public function testGetConnections()
     {

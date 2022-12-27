@@ -1,13 +1,13 @@
 <?php
 
 
-namespace IvaoPHP\Whazzup;
+namespace IvaoPHP\Whazzup\Bridge;
 
 
 use IvaoPHP\Shared\Infrastructure\Cache\WhazzupFileCacher;
-use IvaoPHP\Whazzup\Dto\Connections;
-use IvaoPHP\Whazzup\Dto\Whazzup;
-use IvaoPHP\Whazzup\Http\WhazzupFileDownloader;
+use IvaoPHP\Whazzup\Bridge\Dto\Connections;
+use IvaoPHP\Whazzup\Bridge\Dto\Whazzup;
+use IvaoPHP\Whazzup\Bridge\Http\WhazzupFileDownloader;
 
 class IvaoClient
 {

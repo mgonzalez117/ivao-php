@@ -4,11 +4,15 @@
 namespace IvaoPHP\Shared\Infrastructure\Cache;
 
 
-use IvaoPHP\Whazzup\Cache\WhazzupFileCacherInterface;
-use IvaoPHP\Whazzup\Dto\Whazzup;
+use IvaoPHP\Whazzup\Bridge\Cache\WhazzupFileCacherInterface;
+use IvaoPHP\Whazzup\Bridge\Dto\Whazzup;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
-use Symfony\Component\Cache\CacheItem;
 
+/**
+ * todo: to review, maybe to set in Whazzup\Bridge\ Bounded context since DDD introduction
+ * Class WhazzupFileCacher
+ * @package IvaoPHP\Shared\Infrastructure\Cache
+ */
 class WhazzupFileCacher implements WhazzupFileCacherInterface
 {
     private FilesystemAdapter $filesystemAdapter;

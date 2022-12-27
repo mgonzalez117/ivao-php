@@ -1,7 +1,7 @@
 <?php
 
 
-namespace IvaoPHP\Whazzup\Dto;
+namespace IvaoPHP\Whazzup\Bridge\Dto;
 
 
 class Connections
