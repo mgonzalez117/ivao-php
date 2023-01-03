@@ -26,4 +26,26 @@ class IvaoClientTest extends TestCase
     {
         $this->assertEquals(505, $this->ivaoClient->getTotalConnections());
     }
+
+    /**
+     * @covers \IvaoPHP\Whazzup\Bridge\IvaoClient::getAirportTrafic
+     */
+    public function testGetAirportTrafic()
+    {
+        $airportICAO = 'LFMN';
+
+        $trafic = $this->ivaoClient->getAirportTrafic($airportICAO);
+
+        $this->assertIsArray($trafic);
+        $this->assertArrayHasKey('inbounds', $trafic);
+        $this->assertArrayHasKey('outbounds', $trafic);
+
+        $this->assertEquals(1, count($trafic['inbounds']));
+        $this->assertEquals(2, count($trafic['outbounds']));
+
+        $this->assertEquals($airportICAO, $trafic['inbounds'][0]['flightPlan']['arrivalId']);
+
+        $this->assertEquals($airportICAO, $trafic['outbounds'][0]['flightPlan']['departureId']);
+        $this->assertEquals($airportICAO, $trafic['outbounds'][1]['flightPlan']['departureId']);
+    }
 }
