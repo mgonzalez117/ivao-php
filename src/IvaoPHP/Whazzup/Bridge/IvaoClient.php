@@ -18,6 +18,8 @@ class IvaoClient
     private WhazzupFileDownloader $fileDownloader;
     private WhazzupFileCacher $fileCacher;
 
+    private ?Airport $airport = null;
+
     public function __construct(WhazzupFileDownloader $fileDownloader, WhazzupFileCacher $fileCacher)
     {
         $this->fileDownloader = $fileDownloader;
@@ -29,7 +31,7 @@ class IvaoClient
      * Uses the cache because => The whazzup file may only be downloaded once every 15 seconds, which means 4 times during one minute. Using a more frequent download rate will result in an IP ban.
      * @return array
      */
-    public function getData(): array
+    private function getData(): array
     {
 
         if ($cachedWhazzup = $this->fileCacher->getWhazzupFromCache())
@@ -53,29 +55,14 @@ class IvaoClient
         return $this->getData()[Whazzup::CONNECTIONS][Connections::TOTAL];
     }
 
-    public function getAirportTrafic(string $airportICAO)
+    public function getAirport() :Airport
     {
-        $trafic = [
-            'inbounds' => [],
-            'outbounds' => []
-        ];
-
-        $pilots = array_filter($this->getData()[Whazzup::CLIENTS][Clients::PILOTS], function($item) use ($airportICAO) {
-            if ($item[Pilot::FLIGHTPLAN][FlightPlan::DEPARTURE_ID] === $airportICAO || $item[Pilot::FLIGHTPLAN][FlightPlan::ARRIVAL_ID] === $airportICAO) {
-                return true;
-            }
-        });
-
-        foreach($pilots as $pilot) {
-            if ($pilot[Pilot::FLIGHTPLAN][FlightPlan::DEPARTURE_ID] === $airportICAO) {
-                $trafic['outbounds'][] = $pilot;
-            }
-
-            if($pilot[Pilot::FLIGHTPLAN][FlightPlan::ARRIVAL_ID] === $airportICAO) {
-                $trafic['inbounds'][] = $pilot;
-            }
+        if ($this->airport !== null) {
+            return $this->airport;
         }
 
-        return $trafic;
+        $this->airport = new Airport($this->getData());
+
+        return $this->airport;
     }
 }

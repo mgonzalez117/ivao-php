@@ -36,7 +36,7 @@ class IvaoClientTest extends TestCase
     {
         $airportICAO = 'LFMN';
 
-        $trafic = $this->ivaoClient->getAirportTrafic($airportICAO);
+        $trafic = $this->ivaoClient->getAirport()->getTrafic($airportICAO);
 
         $this->assertIsArray($trafic);
         $this->assertArrayHasKey('inbounds', $trafic);
