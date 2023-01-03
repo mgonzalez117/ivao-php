@@ -7,6 +7,8 @@ namespace IvaoPHP\Whazzup\Bridge;
 use IvaoPHP\Shared\Infrastructure\Cache\WhazzupFileCacher;
 use IvaoPHP\Whazzup\Bridge\Dto\Clients;
 use IvaoPHP\Whazzup\Bridge\Dto\Connections;
+use IvaoPHP\Whazzup\Bridge\Dto\Pilot;
+use IvaoPHP\Whazzup\Bridge\Dto\FlightPlan;
 use IvaoPHP\Whazzup\Bridge\Dto\Whazzup;
 use IvaoPHP\Whazzup\Bridge\Http\WhazzupFileDownloader;
 
@@ -59,17 +61,17 @@ class IvaoClient
         ];
 
         $pilots = array_filter($this->getData()[Whazzup::CLIENTS][Clients::PILOTS], function($item) use ($airportICAO) {
-            if ($item['flightPlan']['departureId'] === $airportICAO || $item['flightPlan']['arrivalId'] === $airportICAO) {
+            if ($item[Pilot::FLIGHTPLAN][FlightPlan::DEPARTURE_ID] === $airportICAO || $item[Pilot::FLIGHTPLAN][FlightPlan::ARRIVAL_ID] === $airportICAO) {
                 return true;
             }
         });
 
         foreach($pilots as $pilot) {
-            if ($pilot['flightPlan']['departureId'] === $airportICAO) {
+            if ($pilot[Pilot::FLIGHTPLAN][FlightPlan::DEPARTURE_ID] === $airportICAO) {
                 $trafic['outbounds'][] = $pilot;
             }
 
-            if($pilot['flightPlan']['arrivalId'] === $airportICAO) {
+            if($pilot[Pilot::FLIGHTPLAN][FlightPlan::ARRIVAL_ID] === $airportICAO) {
                 $trafic['inbounds'][] = $pilot;
             }
         }
