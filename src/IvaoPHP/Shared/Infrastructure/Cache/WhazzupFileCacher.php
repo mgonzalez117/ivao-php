@@ -4,8 +4,8 @@
 namespace IvaoPHP\Shared\Infrastructure\Cache;
 
 
-use IvaoPHP\Whazzup\Bridge\Cache\WhazzupFileCacherInterface;
-use IvaoPHP\Whazzup\Bridge\Dto\Whazzup;
+use IvaoPHP\Whazzup\Cache\WhazzupFileCacherInterface;
+use IvaoPHP\Whazzup\Dto\Whazzup;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
 /**

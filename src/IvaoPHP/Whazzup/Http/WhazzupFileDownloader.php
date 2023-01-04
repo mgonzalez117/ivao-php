@@ -1,7 +1,7 @@
 <?php
 
 
-namespace IvaoPHP\Whazzup\Bridge\Http;
+namespace IvaoPHP\Whazzup\Http;
 
 
 class WhazzupFileDownloader
