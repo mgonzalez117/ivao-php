@@ -4,9 +4,9 @@
 namespace IvaoPHP\Tests\Shared\Infrastructure\Cache;
 
 use IvaoPHP\Shared\Infrastructure\Cache\WhazzupFileCacher;
-use IvaoPHP\Tests\Whazzup\Bridge\Http\HttpFileDownloaderMock;
+use IvaoPHP\Tests\Whazzup\Http\HttpFileDownloaderMock;
 use PHPUnit\Framework\TestCase;
-use IvaoPHP\Whazzup\Bridge\Dto\Whazzup;
+use IvaoPHP\Whazzup\Dto\Whazzup;
 
 class WhazzupFileCacherTest extends TestCase
 {

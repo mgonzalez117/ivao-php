@@ -1,18 +1,16 @@
 <?php
 
 
-namespace IvaoPHP\Whazzup\Bridge;
+namespace IvaoPHP\Whazzup;
 
 
+use IvaoPHP\Client\IvaoClientInterface;
 use IvaoPHP\Shared\Infrastructure\Cache\WhazzupFileCacher;
-use IvaoPHP\Whazzup\Bridge\Dto\Clients;
-use IvaoPHP\Whazzup\Bridge\Dto\Connections;
-use IvaoPHP\Whazzup\Bridge\Dto\Pilot;
-use IvaoPHP\Whazzup\Bridge\Dto\FlightPlan;
-use IvaoPHP\Whazzup\Bridge\Dto\Whazzup;
-use IvaoPHP\Whazzup\Bridge\Http\WhazzupFileDownloader;
+use IvaoPHP\Whazzup\Dto\Connections;
+use IvaoPHP\Whazzup\Dto\Whazzup;
+use IvaoPHP\Whazzup\Http\WhazzupFileDownloader;
 
-class IvaoClient
+class WhazzupClient implements IvaoClientInterface
 {
     private ?Whazzup $whazzup = null;
     private WhazzupFileDownloader $fileDownloader;

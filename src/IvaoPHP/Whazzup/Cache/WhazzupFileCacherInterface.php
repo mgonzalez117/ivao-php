@@ -1,10 +1,10 @@
 <?php
 
 
-namespace IvaoPHP\Whazzup\Bridge\Cache;
+namespace IvaoPHP\Whazzup\Cache;
 
 
-use IvaoPHP\Whazzup\Bridge\Dto\Whazzup;
+use IvaoPHP\Whazzup\Dto\Whazzup;
 
 interface WhazzupFileCacherInterface
 {

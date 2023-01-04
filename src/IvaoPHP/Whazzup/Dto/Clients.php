@@ -1,6 +1,6 @@
 <?php
 
-namespace IvaoPHP\Whazzup\Bridge\Dto;
+namespace IvaoPHP\Whazzup\Dto;
 
 
 class Clients

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace IvaoPHP\Tests\Whazzup\Bridge\Http;
+namespace IvaoPHP\Tests\Whazzup\Http;
 
 
 use PHPUnit\Framework\TestCase;
-use IvaoPHP\Whazzup\Bridge\Http\WhazzupFileDownloader;
-use IvaoPHP\Whazzup\Bridge\Dto\Clients;
-use IvaoPHP\Whazzup\Bridge\Dto\Whazzup;
-use IvaoPHP\Whazzup\Bridge\Dto\Connections;
+use IvaoPHP\Whazzup\Http\WhazzupFileDownloader;
+use IvaoPHP\Whazzup\Dto\Clients;
+use IvaoPHP\Whazzup\Dto\Whazzup;
+use IvaoPHP\Whazzup\Dto\Connections;
 
 class WhazzupFileDownloaderTest extends TestCase
 {
@@ -22,7 +22,7 @@ class WhazzupFileDownloaderTest extends TestCase
     }
 
     /**
-     * @covers \IvaoPHP\Whazzup\Bridge\Http\WhazzupFileDownloader::getScalarResponseData
+     * @covers \IvaoPHP\Whazzup\Http\WhazzupFileDownloader::getScalarResponseData
      */
     public function testGetScalarData()
     {

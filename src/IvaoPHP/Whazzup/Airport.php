@@ -1,15 +1,16 @@
 <?php
 
 
-namespace IvaoPHP\Whazzup\Bridge;
+namespace IvaoPHP\Whazzup;
 
 
-use IvaoPHP\Whazzup\Bridge\Dto\Clients;
-use IvaoPHP\Whazzup\Bridge\Dto\FlightPlan;
-use IvaoPHP\Whazzup\Bridge\Dto\Pilot;
-use IvaoPHP\Whazzup\Bridge\Dto\Whazzup;
+use IvaoPHP\Client\Airport\AirportInterface;
+use IvaoPHP\Whazzup\Dto\Clients;
+use IvaoPHP\Whazzup\Dto\FlightPlan;
+use IvaoPHP\Whazzup\Dto\Pilot;
+use IvaoPHP\Whazzup\Dto\Whazzup;
 
-class Airport
+class Airport implements AirportInterface
 {
     private array $whazzupData;
 
@@ -18,7 +19,7 @@ class Airport
         $this->whazzupData = $whazzupData;
     }
 
-    public function getTrafic(string $airportICAO)
+    public function getTraffic(string $airportICAO) :array
     {
         $trafic = [
             'inbounds' => [],
